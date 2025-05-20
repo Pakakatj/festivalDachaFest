@@ -1,0 +1,31 @@
+.error-page {
+  text-align: center;
+  padding: 5vw 5vw;
+}
+
+.error-page h1 {
+  font-size: 15rem;
+  color: #212035;
+  margin-top: 6vw;
+}
+
+.error-page p {
+  font-size: 3rem;
+  margin-top: -3vw;
+  color: #212035;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 1vw 2vw;
+  background-color: #212035;
+  color: rgba(66, 64, 106, 1);
+  text-decoration: none;
+  border-radius: 5vw;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: rgba(204, 214, 239, 1);
+}
