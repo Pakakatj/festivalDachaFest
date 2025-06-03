@@ -1,6 +1,7 @@
 console.log("JavaScript подключён!");
 document.addEventListener("DOMContentLoaded", () => {
   clouds();
+  animate();
 });
 document.addEventListener("DOMContentLoaded", () => {
   const mapContainer = document.getElementById("map-container");
@@ -76,3 +77,23 @@ function clouds() {
 cloud.style.animationName = "moveCloud";
 cloud.style.animationTimingFunction = "linear";
 cloud.style.animationIterationCount = "infinite";
+
+const glider = document.getElementById("glider");
+
+let x = 0;
+let direction = 1;
+const speed = 2;
+
+function animate() {
+  x += direction * speed;
+
+  if (x > window.innerWidth - glider.width || x < -glider.width) {
+    direction *= -1;
+  }
+
+  glider.style.left = x + "vw";
+
+  requestAnimationFrame(animate);
+}
+
+animate();

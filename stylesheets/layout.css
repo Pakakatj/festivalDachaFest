@@ -5,23 +5,24 @@
 
 .error-page h1 {
   font-size: 15rem;
-  color: #212035;
-  margin-top: 6vw;
+  color: white;
+  margin-top: 12vw;
 }
 
 .error-page p {
   font-size: 3rem;
   margin-top: -3vw;
-  color: #212035;
+  color: white;
 }
 
 .btn-back {
   display: inline-block;
   padding: 1vw 2vw;
-  background-color: #212035;
-  color: rgba(66, 64, 106, 1);
+  background-color: #f4673d;
+  margin-top: 1vw;
+  color: white;
   text-decoration: none;
-  border-radius: 5vw;
+  border-radius: 1vw;
   font-size: 1.5rem;
   transition: background-color 0.3s ease;
 }
@@ -57,9 +58,9 @@ body {
 
 .marker {
   position: absolute;
-  width: 4vw;
-  height: 4vw;
-  background-color: red;
+  width: 2vw;
+  height: 2vw;
+  background-color: #f4673d;
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
@@ -75,7 +76,7 @@ body {
   color: white;
   padding: 2vw 4vw;
   border-radius: 2vw;
-  font-size: 6vw;
+  font-size: 2vw;
   white-space: nowrap;
   pointer-events: none;
 }
@@ -179,4 +180,12 @@ body {
   left: 5%;
   background-image: url("../images/c1.svg");
   animation-direction: alternate-reverse;
+}
+
+#glider {
+  background-size: cover;
+  top: 20vw;
+  width: 10vw;
+  transform: translateY(-50%);
+  background-image: url("../images/fly.svg");
 }
