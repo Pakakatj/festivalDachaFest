@@ -6,3 +6,14 @@
     transform: translateX(100vw);
   }
 }
+@keyframes flyAway {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+.ship.animate {
+  animation: flyAway 6s linear forwards;
+}

@@ -11,15 +11,27 @@
   <body>
     <h1>Магазин</h1>
     <nav>
-      <a href="index.html">Главная</a>
-      <a href="about.html">О нас</a>
-      <a href="shop.html">Магазин</a>
-      <a href="contact.html">Контакты</a>
-      <a href="tickets.html">Билеты</a>
-      <a href="questions.html">Вопросы</a>
-      <a href="404.html">Ошибка 404</a>
+      <div id="burger"></div>
+      <div class="main-menu">
+        <a href="index.html">Главная</a>
+        <div class="links">
+          <a href="about.html">О нас</a>
+          <a href="shop.html">Магазин</a>
+          <a href="contact.html">Контакты</a>
+          <a href="tickets.html">Билеты</a>
+          <a href="questions.html">Вопросы</a>
+          <a href="404.html">Ошибка 404</a>
+          <div class="cart-count">🧺</div>
+        </div>
+      </div>
     </nav>
-
+    <button id="addButton">Добавить</button>
+    <div id="modal">
+      <div class="modal-content">
+        <p>Товар добавлен в корзину</p>
+        <button id="closeBtn">OK</button>
+      </div>
+    </div>
     <section id="product-list"></section>
   </body>
 </html>

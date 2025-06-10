@@ -2,9 +2,31 @@ console.log("JavaScript подключён!");
 
 document.addEventListener("DOMContentLoaded", () => {
   clouds();
-  animate();
   renderProducts();
   updateCartCount();
+
+  // === Код с кнопкой добавления товара и модалкой ===
+  const button = document.getElementById("addButton");
+  const modal = document.getElementById("modal");
+  const closeBtn = document.getElementById("closeBtn");
+
+  if (button) {
+    button.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 
   const mapContainer = document.getElementById("map-container");
   const map = document.getElementById("map");
@@ -56,14 +78,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.querySelectorAll(".marker").forEach((marker) => {
-    marker.addEventListener("mouseenter", () => {
+    marker.addEventListener("mouseover", () => {
+      console.log("marker");
       const tooltip = document.createElement("div");
       tooltip.className = "tooltip";
       tooltip.textContent = marker.dataset.tooltip;
       marker.appendChild(tooltip);
 
-      tooltip.style.left = `${-tooltip.offsetWidth / 2 + 10}vw`;
-      tooltip.style.top = `-25vw`;
+      tooltip.style.left = `2vw`;
+      // tooltip.style.left = `${-tooltip.offsetWidth / 2 + 10}vw`
+      tooltip.style.top = `2vw`;
     });
 
     marker.addEventListener("mouseleave", () => {
@@ -84,43 +108,46 @@ function clouds() {
   });
 }
 
-const glider = document.getElementById("glider");
-
 let x = 0;
 let direction = 1;
 const speed = 2;
 
-function animate() {
-  x += direction * speed;
-
-  if (x > window.innerWidth - (glider.width || 100) || x < -100) {
-    direction *= -1;
-  }
-
-  glider.style.left = x + "vw";
-
-  requestAnimationFrame(animate);
-}
 const products = [
   {
     id: 1,
-    name: "Футболка",
+    name: "футболка оверсайз",
     price: 3500,
-    image:
-      "https://static.insales-cdn.com/images/products/1/5982/769103710/DSCF0096.jpg",
+    image: "images/Tshirt.png",
   },
   {
     id: 2,
-    name: "Кружка",
-    price: 2000,
-    image: "https://sublimagia.ru/image/cache/catalog/mugs/2397-600x600.jpg",
+    name: "шоппер",
+    price: 899,
+    image: "images/bag.png",
   },
   {
     id: 3,
-    name: "Пин",
-    price: 1500,
-    image:
-      "https://rockbunker.ru/upload/iblock/55f/9xbv232jog0ezdl846iq77swlw4rxhui.jpg",
+    name: "резиновые сапоги",
+    price: 3500,
+    image: "images/boots.png",
+  },
+  {
+    id: 4,
+    name: "блокнот",
+    price: 549,
+    image: "images/book.png",
+  },
+  {
+    id: 5,
+    name: "набор ластиков",
+    price: 199,
+    image: "images/irrisers.png",
+  },
+  {
+    id: 6,
+    name: "постер 29,7х42см",
+    price: 199,
+    image: "images/poster.png",
   },
 ];
 
@@ -165,12 +192,12 @@ function getProductCount(productID) {
 
 function removeFromCart(productID) {
   let cart = getCart();
-  console.log(cart);
-
   const index = cart.findIndex((p) => p.id === productID);
 
   if (index != -1) {
-    cart[index].quantity -= 1;
+    if (cart[index].quantity > 0) {
+      cart[index].quantity -= 1;
+    }
   } else {
     cart.splice(index, 0);
   }
