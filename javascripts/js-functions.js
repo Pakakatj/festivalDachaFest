@@ -94,5 +94,5 @@ window.addEventListener("load", function () {
   setTimeout(() => {
     loader.style.display = "none";
     document.getElementById("content").style.display = "block";
-  }, 10000);
+  }, 1000);
 });

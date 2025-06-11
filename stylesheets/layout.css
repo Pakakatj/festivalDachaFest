@@ -42,6 +42,7 @@ body {
   position: relative;
   overflow: hidden;
   cursor: grab;
+  z-index: 1;
 }
 
 #map {
@@ -200,4 +201,115 @@ body {
 .loaded #loader {
   opacity: 0;
   pointer-events: none;
+}
+.nav {
+  width: 100%;
+  border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+}
+.nav + * {
+  margin-top: 90px;
+}
+#burger {
+  display: block;
+  border: none;
+  width: 40px;
+  height: 26px;
+  position: relative;
+  margin: 16px;
+  cursor: pointer;
+}
+#burger::after,
+#burger::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 10px;
+  background-color: #111;
+  transition: all ease 0.3s;
+}
+#burger::before {
+  top: 0;
+  box-shadow: 0 25px 0 #111;
+}
+#burger.active::before {
+  transform: rotate(45deg);
+  top: 10px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: transform ease 0.3s, box-shadow 0.1s, top ease 0.3s;
+}
+#burger.active::after {
+  transform: rotate(-45deg);
+  top: 10px;
+  transition: all ease 0.3s;
+}
+
+#burger.active + .main-menu {
+  transform: translateX(0);
+  transition: transform ease 0.6s;
+}
+.main-menu {
+  background-image: url("../images/menu.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3vw;
+  gap: 10vw;
+  position: absolute;
+  left: 20vw;
+  top: 20vw;
+  background-color: #eee;
+  transform: translateX(-200%);
+  transition: transform ease 0.3s;
+  border-right: 1px solid #888;
+  z-index: 2;
+}
+
+.main-menu a {
+  margin-left: 20vw;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  text-align: center;
+  padding-left: 1vw;
+  color: rgba(136, 70, 71, 1);
+  text-decoration: none;
+  font-size: 2.5em;
+  font-weight: lighter;
+  min-height: 6vw;
+}
+
+.main-menu a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40%;
+  background-image: url("../images/circle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.main-menu a:hover::before {
+  opacity: 1;
+}
+
+.main-menu a:first-child {
+  margin-top: 3vw; /* Поднимает первую ссылку чуть ниже от верхнего края */
 }
