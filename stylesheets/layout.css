@@ -195,7 +195,7 @@ body {
 .loading-image {
   margin-left: 0.5vw;
   width: 32vw;
-  animation: shake 1.5s infinite;
+  animation: shake 1s ease-in-out 5;
 }
 .loaded #loader {
   opacity: 0;
