@@ -17,3 +17,37 @@
 .ship.animate {
   animation: flyAway 6s linear forwards;
 }
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, -1px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(1px, 2px) rotate(1deg);
+  }
+  30% {
+    transform: translate(-1px, 0px) rotate(0deg);
+  }
+  40% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  60% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   updateCartCount();
 
-  // === Код с кнопкой добавления товара и модалкой ===
   const button = document.getElementById("addButton");
   const modal = document.getElementById("modal");
   const closeBtn = document.getElementById("closeBtn");
@@ -238,3 +237,13 @@ function updateCartCount() {
     document.querySelector(".cart-count").innerHTML = `🧺 ${count}`;
   }
 }
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+  loader.classList.add("loaded");
+
+  // Показываем основной контент
+  setTimeout(() => {
+    loader.style.display = "none";
+    document.getElementById("content").style.display = "block";
+  }, 1000); // через 1 секунду после исчезновения лоадера
+});
