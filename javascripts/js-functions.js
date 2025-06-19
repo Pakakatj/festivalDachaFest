@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
       marker.appendChild(tooltip);
 
       tooltip.style.left = `2vw`;
-      // tooltip.style.left = `${-tooltip.offsetWidth / 2 + 10}vw`
       tooltip.style.top = `2vw`;
     });
 
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function clouds() {
   const clouds = document.querySelectorAll(".cloud");
   clouds.forEach((cloud) => {
-    const randomDuration = Math.random() * (20 - 10) + 10;
+    const randomDuration = Math.random() * (20 - 10) + 30;
     cloud.style.animationDuration = `${randomDuration}s`;
     cloud.style.animationName = "moveCloud";
     cloud.style.animationTimingFunction = "linear";

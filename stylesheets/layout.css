@@ -164,11 +164,72 @@ body {
   width: 300px;
 }
 .cloud {
-  background-image: url("../images/c1.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 10vw;
+  position: absolute;
+  opacity: 0.8;
+  animation: float 17s infinite linear;
+  background-size: cover;
+  z-index: 5;
+}
+
+#cloud1 {
+  width: 15.4vw;
   height: 10vw;
+  top: 1%;
+  left: 0;
+  animation-direction: alternate;
+  background-image: url("../images/c1.svg");
+}
+
+#cloud2 {
+  width: 10.6vw;
+  height: 6.6vw;
+  top: 7%;
+  left: 30%;
+  background-image: url("../images/c1.svg");
+  animation-direction: alternate-reverse;
+}
+
+#cloud3 {
+  width: 10.6vw;
+  height: 6.6vw;
+  top: 40%;
+  left: 80%;
+  animation-direction: alternate;
+  background-image: url("../images/c1.svg");
+}
+#cloud4 {
+  width: 10.6vw;
+  height: 6.6vw;
+  top: 16%;
+  left: 10%;
+  background-image: url("../images/c1.svg");
+  animation-direction: alternate-reverse;
+}
+#cloud5 {
+  width: 15.4vw;
+  height: 10vw;
+  top: 8%;
+  left: 76%;
+  animation-direction: alternate;
+  background-image: url("../images/c1.svg");
+}
+#cloud6 {
+  width: 15.4vw;
+  height: 10vw;
+  top: 36%;
+  left: 5%;
+  background-image: url("../images/c1.svg");
+  animation-direction: alternate-reverse;
+  z-index: 5;
+}
+
+#glider {
+  background-size: cover;
+  top: 20vw;
+  width: 10vw;
+  height: ;
+  transform: translateY(-50%);
+  background-image: url("../images/fly.svg");
 }
 
 #closeBtn {
