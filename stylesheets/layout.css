@@ -163,6 +163,13 @@ body {
   text-align: center;
   width: 300px;
 }
+.cloud {
+  background-image: url("../images/c1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 10vw;
+  height: 10vw;
+}
 
 #closeBtn {
   margin-top: 10px;
