@@ -14,3 +14,11 @@
     transform: translateX(100vw);
   }
 }
+@keyframes scroll-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
