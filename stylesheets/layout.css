@@ -415,3 +415,121 @@ body {
   cursor: pointer;
   z-index: 10;
 }
+.form-container {
+  background-image: url("../images/form.svg");
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 52vw;
+}
+
+form input[type="text"] {
+  margin-top: 0.5vw;
+  width: 100%;
+  font-weight: bold;
+  background-color: #f2eaea;
+  padding: 0.8vw 1vw;
+  font-size: 1.5vw;
+  border: 1px;
+  border-radius: 3vw;
+}
+form button {
+  margin-top: 2vw;
+  width: 100%;
+  padding: 1vw;
+  font-size: 1.2vw;
+  background-color: #f4673d;
+  color: white;
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #e05a30;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 200%;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/background.jpg"); /* Фоновое изображение */
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 4vw;
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.content h1 {
+  font-size: 4vw;
+  margin-bottom: 2vw;
+}
+
+.content p {
+  font-size: 2vw;
+}
+
+.spacer {
+  height: 150vh; /* Делаем длинный промежуток для скролла */
+}
+
+/* Контейнер билета — фиксированная позиция, но показываем только при скролле */
+.ticket-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.ticket {
+  width: 60vw;
+  max-width: 600px;
+  margin-bottom: 4vw;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.buy-button {
+  display: inline-block;
+  padding: 1.5vw 3vw;
+  font-size: 1.5vw;
+  background-color: #f4673d;
+  color: white;
+  border: none;
+  border-radius: 2vw;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  pointer-events: auto;
+}
+
+.buy-button:hover {
+  background-color: #e05a30;
+}
