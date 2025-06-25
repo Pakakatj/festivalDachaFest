@@ -238,8 +238,11 @@ body {
   z-index: 5;
 }
 
-#glider {
-  background-size: cover;
+#flyingShip {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
   top: 20vw;
   width: 10vw;
   height: 7vw;
@@ -292,6 +295,7 @@ body {
   top: 0;
   left: 0;
   background-color: #eee;
+  position: relative;
 }
 .nav + * {
   margin-top: 90px;
@@ -301,9 +305,12 @@ body {
   border: none;
   width: 40px;
   height: 26px;
-  position: relative;
+  position: absolute;
   margin: 16px;
   cursor: pointer;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
 }
 #burger::after,
 #burger::before {
@@ -337,19 +344,13 @@ body {
   transition: transform ease 0.6s;
 }
 .main-menu {
-  background-image: url("../images/menu.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
   width: 60%;
-  height: 100vh;
+  height: fit-content;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   padding-top: 3vw;
   gap: 10vw;
   position: absolute;
   left: 20vw;
-  top: 20vw;
   background-color: #eee;
   transform: translateX(-200%);
   transition: transform ease 0.3s;
@@ -357,18 +358,29 @@ body {
   z-index: 2;
 }
 
-.main-menu a {
-  margin-left: 20vw;
+.links {
   display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
-  width: 70%;
+  background-image: url(../images/menu.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: fit-content;
+  padding: 0 3vw 3vw 3vw;
+}
+
+.main-menu a {
+  /* margin-left: 20vw; */
+  width: 100%;
   text-align: center;
   padding-left: 1vw;
   color: rgba(136, 70, 71, 1);
   text-decoration: none;
-  font-size: 2.5em;
+  font-size: 2.5vw;
   font-weight: lighter;
-  min-height: 6vw;
+  line-height: 6vw;
+  /* min-height: 13.3vw; */
 }
 
 .main-menu a::before {
@@ -394,7 +406,7 @@ body {
 }
 
 .main-menu a:first-child {
-  margin-top: 3vw;
+  margin-top: 6.2vw;
 }
 .full-screen-footer {
   width: 100%;
@@ -420,10 +432,22 @@ body {
   background-size: cover;
   background-color: rgba(255, 255, 255, 0.9);
   height: 52vw;
+  padding: 16vw 9vw;
+  display: flex;
+}
+.form-small-container {
+  width: 50%;
+  background-color: red;
+}
+
+#userForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  width: 50%;
 }
 
 form input[type="text"] {
-  margin-top: 0.5vw;
   width: 100%;
   font-weight: bold;
   background-color: #f2eaea;
@@ -433,7 +457,6 @@ form input[type="text"] {
   border-radius: 3vw;
 }
 form button {
-  margin-top: 2vw;
   width: 100%;
   padding: 1vw;
   font-size: 1.2vw;
@@ -498,6 +521,7 @@ html {
 
 /* Контейнер билета — фиксированная позиция, но показываем только при скролле */
 .ticket-container {
+  background-image: url("../images/tic.svg");
   position: relative;
   display: flex;
   flex-direction: column;
