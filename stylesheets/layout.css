@@ -437,10 +437,14 @@ body {
 }
 .form-small-container {
   width: 50%;
-  background-color: red;
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
 }
 
 #userForm {
+  margin-top: 2vw;
   display: flex;
   flex-direction: column;
   gap: 2vw;
@@ -448,10 +452,11 @@ body {
 }
 
 form input[type="text"] {
+  top: 5vw;
   width: 100%;
   font-weight: bold;
   background-color: #f2eaea;
-  padding: 0.8vw 1vw;
+  padding: 1vw 1vw;
   font-size: 1.5vw;
   border: 1px;
   border-radius: 3vw;
@@ -479,7 +484,6 @@ form button:hover {
 
 body,
 html {
-  height: 200%;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -491,7 +495,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../images/background.jpg"); /* Фоновое изображение */
+  background-image: url("../images/background.jpg");
   background-size: cover;
   background-position: center;
   z-index: -2;
@@ -516,29 +520,37 @@ html {
 }
 
 .spacer {
-  height: 150vh; /* Делаем длинный промежуток для скролла */
+  height: 150vh;
 }
 
-/* Контейнер билета — фиксированная позиция, но показываем только при скролле */
 .ticket-container {
-  background-image: url("../images/tic.svg");
+  z-index: 2;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transform: translateY(100px);
   transition: all 0.8s ease-out;
   pointer-events: none;
   z-index: 10;
+  width: 40vw;
+  margin: 0 auto;
+  background-image: url("../images/ticket.svg");
+  background-size: cover;
+  height: 100vw;
+  position: absolute;
+  top: 105%;
+  left: 30vw;
 }
 
-.ticket {
-  width: 60vw;
-  max-width: 600px;
-  margin-bottom: 4vw;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+.tic {
+  margin: 0 auto;
+  width: 72%;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 15%;
+  z-index: 3;
 }
 
 .buy-button {
@@ -556,4 +568,7 @@ html {
 
 .buy-button:hover {
   background-color: #e05a30;
+}
+#about section {
+  height: 200vh;
 }
