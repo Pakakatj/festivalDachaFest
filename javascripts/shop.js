@@ -2,17 +2,42 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   updateCartCount();
   showModal();
-  document.querySelector(".back-to-top").addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+
+  const backToTopBtn = document.querySelector(".back-to-top");
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     });
-  });
+  }
+
+  // Делегирование событий для кнопок +/-
+  const productList = document.querySelector("#product-list");
+  if (productList) {
+    productList.addEventListener("click", (event) => {
+      const button = event.target.closest("button");
+
+      if (!button) return;
+
+      const productId = parseInt(button.dataset.id);
+      if (isNaN(productId)) return;
+
+      if (button.classList.contains("minus-btn")) {
+        removeFromCart(productId);
+      } else if (button.classList.contains("plus-btn")) {
+        addToCart(productId);
+      }
+    });
+  }
 });
 
 function showModal() {
   const modal = document.getElementById("modal");
   const closeBtn = document.querySelector("#closeBtn");
+
+  if (!modal || !closeBtn) return;
 
   closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
@@ -24,6 +49,7 @@ function showModal() {
     }
   });
 }
+
 function formatPrice(price) {
   const formatted = new Intl.NumberFormat("ru-RU", {
     style: "currency",
@@ -45,6 +71,8 @@ const products = [
 
 function renderProducts() {
   const productList = document.querySelector("#product-list");
+  if (!productList) return;
+
   productList.innerHTML = "";
 
   products.forEach((product) => {
@@ -59,11 +87,9 @@ function renderProducts() {
         <h3>${product.name}</h3>
         <p>${formatPrice(product.price)}</p>
         <div class="buttons">
-          <button onclick='removeFromCart(${product.id})'>-</button>
-          <p>${quantity}</p>
-          <button class="add-button" onclick='addToCart(${
-            product.id
-          })'>+</button>
+          <button class="minus-btn" data-id="${product.id}">−</button>
+          <p class="quantity-display" data-id="${product.id}">${quantity}</p>
+          <button class="add-button plus-btn" data-id="${product.id}">+</button>
         </div>
       </div>
     `;
@@ -80,6 +106,15 @@ function getProductCount(productID) {
   const cart = getCart();
   const item = cart.find((p) => p.id === productID);
   return item ? item.quantity : 0;
+}
+
+function updateProductQuantityDisplay(productId, newQuantity) {
+  const quantityElement = document.querySelector(
+    `.buttons .quantity-display[data-id='${productId}']`
+  );
+  if (quantityElement) {
+    quantityElement.textContent = newQuantity;
+  }
 }
 
 function removeFromCart(productID) {
@@ -99,7 +134,7 @@ function removeFromCart(productID) {
 
 function addToCart(productID) {
   const modal = document.getElementById("modal");
-  modal.style.display = "block";
+  if (modal) modal.style.display = "block";
 
   const cart = getCart();
   const index = cart.findIndex((p) => p.id === productID);
@@ -127,9 +162,7 @@ function updateCartCount() {
   const count = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
 
   const cartCountElement = document.querySelector(".cart-count");
-  if (count > 0) {
-    cartCountElement.innerHTML = `🧺 ${count}`;
-  } else {
-    cartCountElement.innerHTML = `🧺`;
+  if (cartCountElement) {
+    cartCountElement.innerHTML = count > 0 ? `🧺 ${count}` : `🧺`;
   }
 }

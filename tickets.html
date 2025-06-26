@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script src="javascripts/js-functions.js"></script>
+    <script src="javascripts/index.js"></script>
+    <script src="javascripts/shop.js"></script>
+    <script src="javascripts/ticket.js"></script>
     <title>tickets</title>
   </head>
   <body>
+    <a href="index.html"
+      ><img src="images/knopka.svg" alt="" class="knopka"
+    /></a>
+    <nav>
+      <button id="burger"></button>
+      <div class="main-menu">
+        <div class="links">
+          <a href="index.html">ГЛАВНАЯ</a>
+          <a href="about.html"> О НАС</a>
+          <a href="about.html">КУПИТЬ БИЛЕТ</a>
+          <a href="shop.html">МЕРЧ ШОП</a>
+          <a href="https://pakakatj.github.io/JavaScript/ ">ИГРА</a>
+          <a href="questions.html">ВОПРОСЫ</a>
+        </div>
+      </div>
+    </nav>
     <div class="loading-image" id="loading-image"></div>
     <div id="loader">
       <img src="images/cup1.svg" alt="" class="loading-image" id="cup1" />
@@ -39,28 +58,27 @@
           placeholder="Отчество"
           required
         />
-
-        <button type="submit">Отправить</button>
+        <label class="animal-toggle">
+          <input type="checkbox" id="with-animal" class="animal-checkbox" />
+          <span class="circle"></span>
+          <span class="label">с животным</span>
+        </label>
+        <button type="submit" class="otp">Отправить</button>
       </form>
       <div class="form-small-container">
-        <form id="userForm">
-          <input
-            type="text"
-            id="surname"
-            name="surname"
-            placeholder="Фамилия"
-            required
-          />
-          <input type="text" id="name" name="name" placeholder="Имя" required />
-  
-          <input
-            type="text"
-            id="patronymic"
-            name="patronymic"
-            placeholder="Отчество"
-            required
-          />
+        <div class="toggle-container">
+          <div class="toggle-option active" id="child-option">детский</div>
+          <label class="switch">
+            <input type="checkbox" id="tariff-toggle" />
+            <span class="slider"></span>
+          </label>
+          <div class="toggle-option" id="adult-option">взрослый</div>
+        </div>
+        <input type="text" id="sbp" name="sbp" placeholder="СБП" required />
       </div>
     </div>
+    <footer class="full-screen-footer">
+      <div class="back-to-top">(наверх)</div>
+    </footer>
   </body>
 </html>

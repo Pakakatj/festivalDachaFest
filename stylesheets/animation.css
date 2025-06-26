@@ -48,3 +48,19 @@
     transform: translate(0px, 0px) rotate(0deg);
   }
 }
+@keyframes flyRight {
+  0% {
+    left: -45vw;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 110vw;
+    opacity: 0;
+  }
+}

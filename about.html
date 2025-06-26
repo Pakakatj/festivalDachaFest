@@ -5,25 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script src="javascripts/ticket.js"></script>
+    <script src="javascripts/index.js"></script>
     <title>about us</title>
   </head>
   <body>
-    <h1>О нас</h1>
+    <a href="index.html"
+      ><img src="images/knopka.svg" alt="" class="knopka"
+    /></a>
     <nav>
-      <a href="index.html">Главная</a>
-      <a href="about.html">О нас</a>
-      <a href="shop.html">Магазин</a>
-      <a href="contact.html">Контакты</a>
-      <a href="tickets.html">Билеты</a>
-      <a href="questions.html">Вопросы</a>
-      <a href="404.html">Ошибка 404</a>
+      <button id="burger"></button>
+      <div class="main-menu">
+        <div class="links">
+          <a href="index.html">ГЛАВНАЯ</a>
+          <a href="about.html"> О НАС</a>
+          <a href="about.html">КУПИТЬ БИЛЕТ</a>
+          <a href="shop.html">МЕРЧ ШОП</a>
+          <a href="https://pakakatj.github.io/JavaScript/ ">ИГРА</a>
+          <a href="questions.html">ВОПРОСЫ</a>
+        </div>
+      </div>
     </nav>
 
-    <!-- Билет, который появляется при скролле -->
-    <div class="ticket-container">
+    <section>
+      <div class="ticket-container">
+        <a href="tickets.html" class="buy-button">Купить</a>
+      </div>
       <img src="images/tic.svg" alt="" class="tic" />
-      <img src="" alt="" class="ticket" />
-      <button class="buy-button">Купить</button>
-    </div>
+    </section>
   </body>
 </html>
