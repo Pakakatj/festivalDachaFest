@@ -18,69 +18,83 @@ function animateBG() {
   const plus = document.querySelector(".plus");
   const minus = document.querySelector(".minus");
 
+  if (!plus || !minus) {
+    console.warn("Кнопки .plus или .minus не найдены");
+    return;
+  }
+
   let cnt = 0;
 
-  plus.addEventListener("click", () => {
-    cnt += 1;
-    console.log(cnt);
-    setInterval(() => {
-      if (cnt == 1) {
-        vdali.style.transform = "scale(3)";
+  function updateView() {
+    if (vdali && middle) {
+      if (cnt === 0) {
+        // Виден только первый слой
+        vdali.style.display = "block";
+        vdali.style.opacity = "1";
+        vdali.style.transform = "scale(1)";
+        middle.style.display = "none";
+      } else if (cnt === 1) {
+        // Появляется второй слой
         vdali.style.opacity = "0";
         setTimeout(() => {
           vdali.style.display = "none";
-        }, 2000);
-      } else if (cnt == 2) {
-        // middle.style.transform = 'scale(3)'
+          middle.style.display = "block";
+          middle.style.opacity = "1";
+        }, 500);
+      } else if (cnt >= 2) {
+        // Третий шаг
         middle.style.opacity = "0";
         setTimeout(() => {
           middle.style.display = "none";
-        }, 2000);
-      } else if (cnt >= 3) {
-        cnt = 2;
+          // Можно показать карту или другой слой
+          if (map) map.style.display = "block";
+        }, 500);
       }
-    }, 100);
+    }
+  }
+
+  // Обработчики событий
+  plus.addEventListener("click", () => {
+    cnt++;
+    if (cnt > 2) cnt = 2;
+    updateView();
   });
 
   minus.addEventListener("click", () => {
-    cnt -= 1;
-    console.log(cnt);
-    setInterval(() => {
-      if (cnt == 0) {
-        vdali.style.display = "block";
-        vdali.style.transform = "scale(1)";
-        vdali.style.opacity = "1";
-      } else if (cnt == 1) {
-        middle.style.display = "block";
-        // middle.style.transform = 'scale(1)'
-        middle.style.opacity = "1";
-      } else if (cnt <= 0) {
-        cnt = 0;
-      }
-    }, 100);
+    cnt--;
+    if (cnt < 0) cnt = 0;
+    updateView();
   });
 }
+
 document.addEventListener("DOMContentLoaded", () => {
+  animateBG();
+
+  const plusBtn = document.querySelector(".plus");
+  const minusBtn = document.querySelector(".minus");
+
   let plusCount = 0;
   let minusCount = 0;
 
-  document.querySelector(".plus").addEventListener("click", function () {
-    plusCount++;
-    checkDoubleClick(this, plusCount);
-  });
+  if (plusBtn) {
+    plusBtn.addEventListener("click", function () {
+      plusCount++;
+      checkDoubleClick(this, plusCount);
+    });
+  }
 
-  document.querySelector(".minus").addEventListener("click", function () {
-    minusCount++;
-    checkDoubleClick(this, minusCount);
-  });
+  if (minusBtn) {
+    minusBtn.addEventListener("click", function () {
+      minusCount++;
+      checkDoubleClick(this, minusCount);
+    });
+  }
 
   function checkDoubleClick(button, count) {
     if (count % 2 === 0) {
-      // Меняем цвет на черный каждые 2 нажатия
       button.style.color = "black";
       button.style.borderColor = "black";
     } else {
-      // Возвращаем обратно на белый
       button.style.color = "white";
       button.style.borderColor = "white";
     }

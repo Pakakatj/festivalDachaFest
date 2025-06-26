@@ -7,7 +7,9 @@
     <script src="javascripts/js-functions.js"></script>
     <script src="javascripts/index.js"></script>
     <script src="javascripts/shop.js"></script>
+    <script src="javascripts/questions.js"></script>
     <title>questions</title>
+    <link rel="icon" href="images/icon.svg" />
   </head>
   <body>
     <a href="index.html"
@@ -26,6 +28,7 @@
         </div>
       </div>
     </nav>
+
     <div class="loading-image" id="loading-image"></div>
     <div id="loader">
       <img src="images/cup1.svg" alt="" class="loading-image" id="cup1" />
@@ -38,7 +41,59 @@
       <img src="images/cup3.svg" alt="" class="loading-image" id="cup8" />
       <img src="images/cup1.svg" alt="" class="loading-image" id="cup9" />
     </div>
+    <div class="accordion">
+      <div class="cardd" data-info="info1">
+        <span>тариф «детский»</span>
+        <button class="expand-btn">+</button>
+        <div class="extra-info">
+          ребёнок до 7 лет проходит бесплатно и должен находиться под присмотром
+          родителей на всей территории.
+        </div>
+      </div>
 
+      <div class="cardd" data-info="info2">
+        <span>тариф «взрослый»</span>
+        <button class="expand-btn">+</button>
+        <div class="extra-info">
+          взрослые и подростки от 13 лет приобретают билеты по полной стоимости
+          без ограничений.
+        </div>
+      </div>
+
+      <div class="cardd" data-info="info3">
+        <span>покупка билета</span>
+        <button class="expand-btn">+</button>
+        <div class="extra-info">
+          купить билет можно онлайн на сайте или в кассе фестиваля.
+        </div>
+      </div>
+
+      <div class="cardd" data-info="info4">
+        <span>возврат билета</span>
+        <button class="expand-btn">+</button>
+        <div class="extra-info">
+          билет можно вернуть за 7 дней до начала события без комиссии.
+        </div>
+      </div>
+
+      <div class="cardd" data-info="info5">
+        <span>проход с животными</span>
+        <button class="expand-btn">+</button>
+        <div class="extra-info">
+          животные на территории допускаются только в наморднике и на поводке.
+        </div>
+      </div>
+    </div>
+    <div class="cups left">
+      <img src="images/p1.svg" alt="" class="cup cup1" />
+      <img src="images/p2.svg" alt="" class="cup cup2" />
+      <img src="images/p3.svg" alt="" class="cup cup3" />
+    </div>
+    <div class="cups right">
+      <img src="images/p4.svg" alt="" class="cup cup4" />
+      <img src="images/p5.svg" alt="" class="cup cup5" />
+      <img src="images/p6.svg" alt="" class="cup cup6" />
+    </div>
     <div id="content" style="display: none"></div>
     <div class="q"></div>
     <div class="containerp">
