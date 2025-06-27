@@ -5,22 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script src="javascripts/js-functions.js"></script>
+    <script src="javascripts/index.js"></script>
     <title>contacts</title>
     <link rel="icon" href="images/icon.svg" />
   </head>
   <body>
-    <h1>Контакты</h1>
+    <a href="index.html"
+      ><img src="images/knopka.svg" alt="" class="knopka"
+    /></a>
     <nav>
-      <a href="index.html">Главная</a>
-      <a href="about.html">О нас</a>
-      <a href="shop.html">Магазин</a>
-      <a href="contact.html">Контакты</a>
-      <a href="tickets.html">Билеты</a>
-      <a href="questions.html">Вопросы</a>
-      <a href="404.html">Ошибка 404</a>
+      <button id="burger"></button>
+      <div class="main-menu">
+        <div class="links">
+          <a href="index.html">ГЛАВНАЯ</a>
+          <a href="contact.html"> О НАС</a>
+          <a href="about.html">КУПИТЬ БИЛЕТ</a>
+          <a href="shop.html">МЕРЧ ШОП</a>
+          <a href="https://pakakatj.github.io/JavaScript/ ">ИГРА</a>
+          <a href="questions.html">ВОПРОСЫ</a>
+        </div>
+      </div>
     </nav>
-    <div class="loader" id="loader"></div>
-    <div class="loaded" id="loaded"></div>
     <div class="loading-image" id="loading-image"></div>
     <div id="loader">
       <img src="images/cup1.svg" alt="" class="loading-image" id="cup1" />
@@ -33,8 +38,26 @@
       <img src="images/cup3.svg" alt="" class="loading-image" id="cup8" />
       <img src="images/cup1.svg" alt="" class="loading-image" id="cup9" />
     </div>
-
-    <div id="content" style="display: none"></div>
-    <div class="background"></div>
+    <div class="background-section">
+      <img src="../images/bg.svg" alt="" class="scrolling-bg" />
+      <div class="carousel-container">
+        <img src="images/1.png" class="side left" alt="Левая 1" />
+        <img src="images/2.png " class="center" alt="Центр 1" />
+        <img src="images/3.png " class="side right" alt="Правая 1" />
+      </div>
+      <div class="carousel-container">
+        <img src="images/4.png" class="side left" alt="Левая 2" />
+        <img src="images/5.png" class="center" alt="Центр 2" />
+        <img src="images/6.png " class="side right" alt="Правая 2" />
+      </div>
+      <div class="carousel-container">
+        <img src="images/7.png " class="side left" alt="Левая 3" />
+        <img src="images/8.png " class="center" alt="Центр 3" />
+        <img src="images/9.png " class="side right" alt="Правая 3" />
+      </div>
+      <a href="https://pakakatj.github.io/webposter/ " class="btn-afisha"
+        >посмотреть афишу</a
+      >
+    </div>
   </body>
 </html>

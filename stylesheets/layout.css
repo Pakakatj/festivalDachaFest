@@ -60,8 +60,8 @@ body {
 
 .marker {
   position: absolute;
-  width: 2vw;
-  height: 2vw;
+  width: 1.5vw;
+  height: 1.5vw;
   background-color: #f4673d;
   border-radius: 50%;
   cursor: pointer;
@@ -653,7 +653,7 @@ html {
 }
 
 .toggle-option {
-  color: #F2EAEA;
+  color: #f2eaea;
   padding: 0vw 2vw;
   border-radius: 1vw;
   cursor: pointer;
@@ -708,17 +708,7 @@ html {
   font-family: Arial, sans-serif;
 }
 .animal-checkbox {
-  display: none; /
-}
-.circle {
-  width: 2.5vw;
-  height: 2.5vw;
-  border: 3.5px solid #2b3244;
-  border-radius: 50%;
-  background-color: white;
-  position: relative;
-  transition: border-color 0.3s ease;
-  flex-shrink: 0;
+  display: none;
 }
 .animal-checkbox:checked + .circle::after {
   content: "";
@@ -733,7 +723,7 @@ html {
 }
 #sbp {
   margin-top: 6vw;
-  background-color: #F2EAEA;
+  background-color: #f2eaea;
   font-weight: bold;
   border-radius: 20vw;
 }
@@ -766,7 +756,7 @@ input[type="text"]::placeholder {
   margin-left: 20vw;
   border-radius: 20vw;
   margin-top: 4vw;
-font-size: 1.7vw;
+  font-size: 1.7vw;
 }
 .q {
   background-image: url("../images/q.svg");
@@ -779,12 +769,10 @@ font-size: 1.7vw;
   top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
- z-index: -1;
-
+  z-index: -1;
 }
 .containerp {
-margin-top: 59vw;
-
+  margin-top: 59vw;
 }
 
 .accordion {
@@ -798,7 +786,7 @@ margin-top: 59vw;
 }
 
 .cardd {
-  top: -3vw;
+  top: -12vw;
   width: 100%;
   max-width: 60vw;
   background-color: white;
@@ -821,7 +809,7 @@ margin-top: 59vw;
 .cardd span {
   font-size: 1.9vw;
   font-weight: bold;
-  color: #2B3244;
+  color: #2b3244;
 }
 
 .expand-btn {
@@ -831,7 +819,7 @@ margin-top: 59vw;
   background: none;
   border: none;
   font-size: 3vw;
-  color: #2B3244;
+  color: #2b3244;
   cursor: pointer;
   z-index: 2;
 }
@@ -858,7 +846,6 @@ margin-top: 59vw;
   max-height: 10vw;
 }
 .cups {
-  position: fixed;
   top: 17.5vh;
   width: 10vw;
   display: flex;
@@ -866,17 +853,20 @@ margin-top: 59vw;
   justify-content: space-between;
   height: 60vh;
   z-index: 9999;
-  pointer-events: none; 
+  pointer-events: none;
   opacity: 1;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .left {
-  left: -5vw;
+  margin-left: -10vw;
+  margin-top: -65vw;
 }
 
+
 .right {
-  right: 4.5vw;
+  margin-left: 82vw;
+  margin-top: -40vw;
 }
 
 .cup {
@@ -889,4 +879,112 @@ margin-top: 59vw;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+.links a {
+  font-weight: normal;
+  text-decoration: none;
+  color: #2b3244;
+  transition: font-weight 0.3s ease, color 0.3s ease;
+}
+
+.links a:hover {
+  font-weight: bold;
+  color: #884647;
+}
+.background-section {
+  position: relative;
+  top: 2vw;
+  width: 100%;
+  min-height: 400vh;
+  background-image: url("../images/bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  padding: 2vw;
+}
+.carousel-container {
+  top: -23vw;
+  position: relative;
+  width: max-content;
+  height: auto;
+  margin: 5vw auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container img.center {
+  width: 25vw;
+  z-index: 2;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.carousel-container img.side {
+  position: absolute;
+  width: 10vw;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-container img.left {
+  left: -12vw;
+  transform: translateX(0) translateY(-50%);
+}
+
+.carousel-container img.right {
+  right: -12vw;
+  transform: translateX(0) translateY(-50%);
+}
+
+.carousel-container:hover img.left,
+.carousel-container:hover img.right {
+  opacity: 1;
+}
+.btn-afisha {
+  margin-top: 60vw;
+  display: inline-block;
+  padding: 1.5vw 3vw;
+  font-size: 1.8vw;
+  color: white;
+  background-color: #2B3244; 
+  text-decoration: none;
+  border-radius: 2vw;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.btn-afisha:hover {
+  background-color: #f4673d;
+  cursor: pointer;
+}
+
+.btn-afisha:active {
+  transform: scale(0.98); /
+}
+.faq-title {
+  font-size: 4vw;
+  color: #42406A; 
+  text-align: center;
+  padding-top: 2vw;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 5vw;
+    margin: 6vw auto 3vw;
+  }
+}
+#pod {
+  margin-top: 30vw;
 }
