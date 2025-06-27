@@ -28,13 +28,11 @@ function animateBG() {
   function updateView() {
     if (vdali && middle) {
       if (cnt === 0) {
-        // Виден только первый слой
         vdali.style.display = "block";
         vdali.style.opacity = "1";
         vdali.style.transform = "scale(1)";
         middle.style.display = "none";
       } else if (cnt === 1) {
-        // Появляется второй слой
         vdali.style.opacity = "0";
         setTimeout(() => {
           vdali.style.display = "none";
@@ -42,18 +40,14 @@ function animateBG() {
           middle.style.opacity = "1";
         }, 500);
       } else if (cnt >= 2) {
-        // Третий шаг
         middle.style.opacity = "0";
         setTimeout(() => {
           middle.style.display = "none";
-          // Можно показать карту или другой слой
           if (map) map.style.display = "block";
         }, 500);
       }
     }
   }
-
-  // Обработчики событий
   plus.addEventListener("click", () => {
     cnt++;
     if (cnt > 2) cnt = 2;

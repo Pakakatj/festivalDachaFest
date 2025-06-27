@@ -758,19 +758,6 @@ input[type="text"]::placeholder {
   margin-top: 4vw;
   font-size: 1.7vw;
 }
-.q {
-  background-image: url("../images/q.svg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 70vw;
-  position: absolute;
-  top: 53%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
 .containerp {
   margin-top: 59vw;
 }
@@ -937,12 +924,12 @@ input[type="text"]::placeholder {
 }
 
 .carousel-container img.left {
-  left: -12vw;
+  left: -20vw;
   transform: translateX(0) translateY(-50%);
 }
 
 .carousel-container img.right {
-  right: -12vw;
+  right: -20vw;
   transform: translateX(0) translateY(-50%);
 }
 
