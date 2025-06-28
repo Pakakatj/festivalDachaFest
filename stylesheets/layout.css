@@ -707,17 +707,17 @@ html {
   font-weight: 550;
   font-family: Arial, sans-serif;
 }
-.animal-checkbox {
+/* .animal-checkbox {
   display: none;
-}
+} */
 .animal-checkbox:checked + .circle::after {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 73%;
+  left: 9.4%;
   transform: translate(-50%, -50%);
-  width: 1vw;
-  height: 1vw;
+  width: 1.5vw;
+  height: 1.5vw;
   background-color: #2b3244;
   border-radius: 50%;
 }
